@@ -24,10 +24,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // -- Left (top row)
     KC_Q, KC_W, KC_E, KC_R, KC_T,
     // -- Right (top row)
-    KC_Y, KC_U, LT(1,KC_I), KC_O,
+    KC_Y, KC_U, LT(1,KC_I), KC_O, KC_P,
 
     // -- Left (middle row)
-    KC_P, LT(2,KC_A), KC_S, LT(2,KC_D), LT(3,KC_F), KC_G,
+    LT(2,KC_A), KC_S, LT(2,KC_D), LT(3,KC_F), KC_G,
     // -- Right (middle row)
     KC_H, KC_J, KC_K, KC_L, LT(1,KC_SCLN),
 
@@ -42,10 +42,69 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TAB, MEH_T(KC_SPC), TG(4)
   ),
 
-  [1] = LAYOUT_split_3x5_3(KC_EXLM, KC_AT, KC_LCBR, KC_RCBR, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_T, KC_EQL, KC_LPRN, KC_RPRN, KC_HASH, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_CIRC, KC_PERC, KC_LBRC, KC_RBRC, KC_TILD, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-  [2] = LAYOUT_split_3x5_3(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PAST, KC_PLUS, KC_DQUO, KC_UNDS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PMNS, KC_QUOT, KC_AMPR, KC_BSLS, KC_ENT, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_Y, KC_PIPE, KC_GRV, KC_DLR, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-  [3] = LAYOUT_split_3x5_3(KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_PLUS, KC_7, KC_8, KC_9, KC_ASTR, TO(0), KC_NO, KC_NO, KC_NO, KC_NO, KC_DOT, KC_4, KC_5, KC_6, KC_0, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_EQL, KC_1, KC_2, KC_3, KC_HASH, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-  [4] = LAYOUT_split_3x5_3(LALT(LGUI(KC_ESCAPE)), LGUI(KC_W), LCTL(RSFT(KC_TAB)), LCTL(KC_TAB), KC_NO, KC_NO, LGUI(KC_PMNS), LGUI(KC_EQL), LGUI(KC_0), KC_NO, TO(0), KC_ESC, LSFT(KC_TAB), LGUI(KC_TAB), LGUI(LSFT(KC_4)), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT, KC_NO, LSFT(KC_TAB), KC_TAB, KC_LCTL, KC_NO, KC_NO, LGUI(KC_LBRC), LGUI(KC_RBRC), KC_TRNS, KC_TRNS, TO(3), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS)
+  [1] = LAYOUT_split_3x5_3(
+    // -- Left (top)
+    KC_EXLM, KC_AT, KC_LCBR, KC_RCBR, KC_NO,
+    // -- Right (top)
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+
+    // -- Left (middle)
+    KC_T, KC_EQL, KC_LPRN, KC_RPRN, KC_HASH,
+    // -- Right (middle)
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_TRNS,
+
+    // -- Left (bottom)
+    KC_CIRC, KC_PERC, KC_LBRC, KC_RBRC, KC_TILD,
+    // -- Right (bottom)
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+
+    // -- Left thumb
+    KC_TRNS, KC_TRNS, KC_TRNS,
+    // -- Right thumb
+    KC_TRNS, KC_TRNS, KC_TRNS
+  ),
+
+  [2] = LAYOUT_split_3x5_3(
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_PAST, KC_PLUS, KC_DQUO, KC_UNDS,
+
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_PMNS, KC_QUOT, KC_AMPR, KC_BSLS, KC_ENT,
+
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_NO, KC_Y, KC_PIPE, KC_GRV, KC_DLR,
+
+    KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS
+  ),
+
+  [3] = LAYOUT_split_3x5_3(
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_PLUS, KC_7, KC_8, KC_9, KC_ASTR,
+
+    TO(0), KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_DOT, KC_4, KC_5, KC_6, KC_0,
+
+    KC_NO, KC_NO, KC_NO, KC_NO, KC_NO,
+    KC_EQL, KC_1, KC_2, KC_3, KC_HASH,
+
+    KC_TRNS, KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS
+  ),
+
+  [4] = LAYOUT_split_3x5_3(
+    LALT(LGUI(KC_ESCAPE)), LGUI(KC_W), LCTL(RSFT(KC_TAB)), LCTL(KC_TAB), KC_NO,
+    KC_NO, LGUI(KC_PMNS), LGUI(KC_EQL), LGUI(KC_0), KC_NO,
+
+    TO(0), KC_ESC, LSFT(KC_TAB), LGUI(KC_TAB), LGUI(LSFT(KC_4)),
+    KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT,
+
+    KC_NO, LSFT(KC_TAB), KC_TAB, KC_LCTL, KC_NO,
+    KC_NO, LGUI(KC_LBRC), LGUI(KC_RBRC), KC_TRNS, KC_TRNS,
+
+    TO(3), KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS
+  )
 };
 
 #ifdef OLED_ENABLE
