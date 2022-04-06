@@ -8,3 +8,4 @@
 #define TAPPING_TERM 200
 // Respect above term for shift and command. Ex. with LSFT_T(KC_C) typing 'ck' fast will output 'K'.
 #define IGNORE_MOD_TAP_INTERRUPT
+#define IGNORE_MOD_TAP_INTERRUPT_PER_KEY
