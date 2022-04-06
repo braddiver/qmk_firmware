@@ -97,3 +97,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_TRNS, KC_TRNS, KC_TRNS
   )
 };
+
+bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
+    switch (keycode) {
+        case LSFT_T(KC_C): // Shift, C
+        case LALT_T(KC_X): // Opt, X
+        case LCTL_T(KC_V): // Ctrl, V
+        case RCTL_T(KC_M): // Ctrl, M
+        case RSFT_T(KC_COMM): // Shift, ','
+        case RALT_T(KC_DOT): // Opt, '.'
+            // Do not force the mod-tap key press to be handled as a modifier
+            // if any other key was pressed while the mod-tap key is held down.
+            // Modifier will only take affect after the tapping_term
+            return true;
+        default:
+            // Force the mod-tap key press to be handled as a modifier if any
+            // other key was pressed while the mod-tap key is held down.
+            return false;
+    }
+}
