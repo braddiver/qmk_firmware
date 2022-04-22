@@ -20,7 +20,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // -- Left thumb
     OSM(MOD_MEH), LGUI_T(KC_ESC), KC_BSPC,
     // -- Right thumb
-    KC_TAB, MEH_T(KC_SPC), TO(4)
+    KC_TAB, KC_SPC, TO(4)
   ),
 
   // Symbol layer for left hand. Right holds pinky middle.
