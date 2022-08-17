@@ -92,8 +92,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // <None> <PrevBrowseHistory> <NextBrowseHistory> <Transparent> <...>
     KC_NO, LGUI(KC_LBRC), LGUI(KC_RBRC), KC_TRNS, KC_TRNS,
 
-    // <Layer3> <Transparent> <...>
-    TO(3), KC_TRNS, KC_TRNS,
+    // <Layer0> <Transparent> <...>
+    TO(0), KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS
   )
 };
