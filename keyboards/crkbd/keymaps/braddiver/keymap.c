@@ -18,9 +18,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_N, RCTL_T(KC_M), RSFT_T(KC_COMM), RALT_T(KC_DOT), KC_SLSH,
 
     // -- Left thumb
-    OSM(MOD_MEH), LGUI_T(KC_ESC), KC_BSPC,
+    MO(4), LGUI_T(KC_ESC), KC_BSPC,
     // -- Right thumb
-    KC_TAB, KC_SPC, TO(4)
+    KC_TAB, KC_SPC, OSM(MOD_MEH)
   ),
 
   // Symbol layer for left hand. Right holds pinky middle.
@@ -93,7 +93,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_NO, LGUI(KC_LBRC), LGUI(KC_RBRC), KC_TRNS, KC_TRNS,
 
     // <Layer0> <Transparent> <...>
-    TO(0), KC_TRNS, KC_TRNS,
+    KC_TRNS, KC_TRNS, KC_TRNS,
     KC_TRNS, KC_TRNS, KC_TRNS
   )
 };
