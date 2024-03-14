@@ -3,7 +3,7 @@
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [0] = LAYOUT_split_3x5_3(
     // -- Left (top row)
-    KC_Q, KC_W, KC_E, KC_R, KC_T,
+    KC_Q, KC_W, LT(2,KC_E), KC_R, KC_T,
     // -- Right (top row)
     KC_Y, KC_U, LT(1,KC_I), KC_O, KC_P,
 
