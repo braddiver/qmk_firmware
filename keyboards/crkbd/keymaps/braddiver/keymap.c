@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // -- Left (bottom row)
     KC_Z, LALT_T(KC_X), LSFT_T(KC_C), LCTL_T(KC_V), KC_B,
     // -- Right (bottom row)
-    KC_N, RCTL_T(KC_M), RSFT_T(KC_COMM), RALT_T(KC_DOT), KC_SLSH,
+    KC_N, RCTL_T(KC_M), RSFT_T(KC_COMMA), RALT_T(KC_DOT), KC_SLSH,
 
     // -- Left thumb
     MO(4), LGUI_T(KC_ESC), KC_BSPC,
@@ -88,9 +88,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT,
 
     // <None> <PrevApp(w/ThumbCommand)> <NextApp(w/ThumbCommand)> <None>
-    KC_NO, LSFT(KC_TAB), KC_TAB, KC_LCTL, KC_NO,
-    // <None> <PrevBrowseHistory> <NextBrowseHistory> <Transparent> <...>
-    KC_NO, LGUI(KC_LBRC), LGUI(KC_RBRC), KC_TRNS, KC_TRNS,
+    KC_NO, LALT_T(KC_X), KC_TAB, KC_LCTL, KC_NO,
+    // <None> <PrevBrowseHistory> <NextBrowseHistory> <RightAlt(period)> <...>
+    KC_NO, LGUI(KC_LBRC), LGUI(KC_RBRC), RALT_T(KC_DOT), KC_TRNS,
 
     // <Layer0> <Transparent> <...>
     KC_TRNS, KC_TRNS, KC_TRNS,
@@ -98,21 +98,3 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
-bool get_ignore_mod_tap_interrupt(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case LSFT_T(KC_C): // Shift, C
-        case LALT_T(KC_X): // Opt, X
-        case LCTL_T(KC_V): // Ctrl, V
-        case RCTL_T(KC_M): // Ctrl, M
-        case RSFT_T(KC_COMM): // Shift, ','
-        case RALT_T(KC_DOT): // Opt, '.'
-            // Do not force the mod-tap key press to be handled as a modifier
-            // if any other key was pressed while the mod-tap key is held down.
-            // Modifier will only take affect after the tapping_term
-            return true;
-        default:
-            // Force the mod-tap key press to be handled as a modifier if any
-            // other key was pressed while the mod-tap key is held down.
-            return false;
-    }
-}
