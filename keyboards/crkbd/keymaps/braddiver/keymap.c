@@ -98,3 +98,22 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   )
 };
 
+bool get_hold_on_other_key_press(uint16_t keycode, keyrecord_t *record) {
+    switch(keycode) {
+        case LSFT_T(KC_C): // Shift, C
+        case LALT_T(KC_X): // Opt, X
+        case LCTL_T(KC_V): // Ctrl, V
+        case RCTL_T(KC_M): // Ctrl, M
+        case RSFT_T(KC_COMM): // Shift, ','
+        case RALT_T(KC_DOT): // Opt, '.'
+        case LT(1,KC_I): // Layer1, I
+        case LT(1,KC_SCLN): // Layer1, ;
+        case LT(2,KC_A): // Layer2, A
+        case LT(2,KC_D): // Layer2, D
+        case LT(2,KC_E): // Layer2, E
+        case LT(3,KC_F): // Layer3, F
+            return false;
+        default:
+            return true;
+    }
+}
