@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT,
 
     // <Command> <PrevApp(w/ThumbCommand)> <NextApp(w/ThumbCommand)> <None>
-    LGUI(KC_NO), LALT_T(KC_NO), LSFT_T(KC_NO), KC_LCTL, KC_NO,
+    LGUI(KC_NO), LALT_T(KC_NO), LSFT_T(KC_NO), KC_LCTL, LGUI(KC_NO),
     // <None> <PrevBrowseHistory> <NextBrowseHistory> <RightAlt(period)> <...>
     KC_NO, LGUI(KC_LBRC), LGUI(KC_RBRC), RALT_T(KC_DOT), KC_TRNS,
 
