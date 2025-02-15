@@ -13,7 +13,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_H, KC_J, KC_K, KC_L, LT(1,KC_SCLN),
 
     // -- Left (bottom row)
-    KC_Z, LALT_T(KC_X), LSFT_T(KC_C), LCTL_T(KC_V), KC_B,
+    KC_Z, LALT_T(KC_X), LSFT_T(KC_C), LCTL_T(KC_V), LT(4, KC_B),
     // -- Right (bottom row)
     KC_N, RCTL_T(KC_M), RSFT_T(KC_COMMA), RALT_T(KC_DOT), KC_SLSH,
 
@@ -88,7 +88,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, KC_ENT,
 
     // <Command> <PrevApp(w/ThumbCommand)> <NextApp(w/ThumbCommand)> <None>
-    LGUI(KC_NO), LALT_T(KC_NO), LSFT_T(KC_NO), KC_LCTL, LGUI(KC_NO),
+    LGUI(KC_NO), LALT_T(KC_NO), LSFT_T(KC_NO), KC_LCTL, LALT_T(KC_NO),
     // <None> <PrevBrowseHistory> <NextBrowseHistory> <RightAlt(period)> <...>
     KC_NO, LGUI(KC_LBRC), LGUI(KC_RBRC), RALT_T(KC_DOT), KC_TRNS,
 
