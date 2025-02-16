@@ -15,7 +15,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // -- Left (bottom row)
     KC_Z, LALT_T(KC_X), LSFT_T(KC_C), LCTL_T(KC_V), LT(4, KC_B),
     // -- Right (bottom row)
-    MEH_T(KC_N), RCTL_T(KC_M), RSFT_T(KC_COMMA), RALT_T(KC_DOT), KC_SLSH,
+    KC_N, RCTL_T(KC_M), RSFT_T(KC_COMMA), RALT_T(KC_DOT), KC_SLSH,
 
     // -- Left thumb
     MO(4), LGUI_T(KC_ESC), KC_BSPC,
